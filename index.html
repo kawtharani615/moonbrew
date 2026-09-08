@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>monnbrew</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <link rel="stylesheet" href="aos.css">
+
+    <style>
+        body
+        {
+            background-color:#daa14c;
+            color:#692f06 !important;
+        }
+        .navbar{
+            background-color: #692f06;
+            color:#daa14c !important;
+        }
+
+        .btn{
+            background-color: #692f06;
+            color:#daa14c;
+        }
+        .btn:hover{
+             background-color:#daa14c;
+            color:#692f06 !important;
+        }
+        .hero{
+             min-height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55))  center/cover;
+            background-image: url('img/a.jpg'); 
+        }
+         .product-img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+    
+     <nav class="navbar navbar-expand-lg sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#home">
+                <i style="color:#daa14c;">
+                MOONBREW
+                </i>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#daa14c;" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#daa14c;" href="#menu">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#daa14c;" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#daa14c;" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section id="home" class="hero d-flex align-items-center">
+
+        <div class="container text-center">
+
+            <h1 class="display-2 fw-bold">
+                Fresh Coffee. Good Moments.
+            </h1>
+
+            <p class="lead">
+                Your favorite coffee, freshly brewed every day.
+            </p>
+
+            <a href="#menu" class="btn btn-lg mt-3">
+                Explore Our Menu
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-md-6">
+
+                    <img src="img/b.jpg"
+                        class="img-fluid rounded shadow">
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h2 class="fw-bold">
+                        Welcome to MOONBREW
+                    </h2>
+
+                    <p class="text-muted">
+                        At MOONBREW, we believe that great coffee brings
+                        people together. We serve freshly brewed coffee,
+                        delicious pastries and refreshing drinks in a
+                        comfortable atmosphere.
+                    </p>
+
+                    <a href="#about" class="btn">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="menu" class="py-5" 
+    data-aos="fade-up">
+
+        <div class="container">
+
+            <div class="text-center mb-4">
+
+                <h2 class="fw-bold">
+                    Our Menu
+                </h2>
+
+                <p class="text-muted">
+                    Choose your favorite drink or treat.
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center mb-4">
+
+                <div class="col-md-6">
+
+                    <div class="input-group">
+
+                        <span class="input-group-text"></span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            class="form-control"
+                            placeholder="Search for coffee...">
+
+                    </div>
+
+                </div>
+
+            </div>
+             
+              <div class="text-center mb-5">
+
+                <button class="btn m-1 category-btn"
+                    onclick="filterProducts('all')">
+                    All
+                </button>
+
+                <button class="btn btn-outline-dark m-1 category-btn"
+                    onclick="filterProducts('coffee')">
+                    Coffee
+                </button>
+
+                <button class="btn btn-outline-dark m-1 category-btn"
+                    onclick="filterProducts('cold')">
+                    Cold Drinks
+                </button>
+
+                <button class="btn btn-outline-dark m-1 category-btn"
+                    onclick="filterProducts('dessert')">
+                    Desserts
+                </button>
+
+            </div>
+
+
+            <div class="coffee row g-4" id="productContainer">
+                
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="coffee"
+                    data-name="cappuccino">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/a1.jpg"                         
+                            class="card-img-top product-img"
+                            >
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Cappuccino
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Rich espresso with creamy milk foam.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $4.50
+                            </h5>
+
+                            <button class="btn"
+                                onclick="orderProduct('Cappuccino')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="coffee"
+                    data-name="Latte">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img
+                            src="img/a2.jpg"
+                           class="card-img-top product-img"
+                            >
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Classic Latte
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Smooth espresso with steamed milk.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $4.00
+                            </h5>
+
+                            <button class="btn"
+                                onclick="orderProduct('Classic Latte')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="coffee"
+                    data-name="Americano">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/a3.jpg"
+                            class="card-img-top product-img">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Espresso
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                A rich and bold shot of freshly brewed 
+                                espresso with a smooth, intense flavor.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $3.50
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Americano')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="coffee"
+                    data-name="mocha">
+                    
+                <div class="card h-100 shadow-sm"
+                 data-aos="fade-up">
+
+                        <img src="img/a4.jpg"
+                            class="card-img-top product-img">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                mocha
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                A delicious blend of rich espresso,
+                                 creamy milk, and sweet chocolate.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $5.50
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Americano')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            
+            <div class="cold row g-4">
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="cold"
+                    data-name="Iced Coffee">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/b1.jpg"
+                            class="card-img-top product-img"
+                            alt="Iced Coffee">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Iced Coffee
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Chilled coffee served over ice.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $4.25
+                            </h5>
+
+                            <button class="btn"
+                                onclick="orderProduct('Iced Coffee')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="cold"
+                    data-name="Iced Latte">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/b2.jpg"
+                            class="card-img-top product-img"
+                            alt="Iced Latte">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Iced Latte
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Cold milk, espresso and ice.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $4.75
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Iced Latte')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                 <div class="col-sm-6 col-lg-4 product"
+                    data-category="cold"
+                    data-name="milkshake">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/b3.jpg"
+                            class="card-img-top product-img"
+                            >
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                milkshake
+                            </h5>
+
+                            <p class="card-text text-muted">
+                               A creamy and refreshing milkshake, perfectly
+                                blended for a sweet treat. 
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $6.75
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Iced Latte')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                 <div class="col-sm-6 col-lg-4 product"
+                    data-category="cold"
+                    data-name="oreo">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/b4.jpg"
+                            class="card-img-top product-img"
+                            alt="Iced Latte">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                oreo
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                A creamy Oreo delight blended with 
+                                milk and crunchy chocolate cookie pieces.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $4.75
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Iced Latte')">
+                                Order Now
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="dessert row g-4">
+                <div class="col-sm-6 col-lg-4 product"
+                    data-category="dessert"
+                    data-name="Chocolate Cake">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/c1.jpg"
+                            class="card-img-top product-img"
+                            alt="Chocolate cake">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                tiramisu
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                A classic Italian dessert with layers of
+                                 coffee-soaked biscuits, mascarpone, and cocoa.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $5.00
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Chocolate Cake')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                  <div class="col-sm-6 col-lg-4 product"
+                    data-category="dessert"
+                    data-name="Chocolate Cake">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/c2.jpg"
+                            class="card-img-top product-img"
+                            alt="Chocolate cake">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                brownie ice cream
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Delicious chocolate cake with ice cream.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $7.00
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Chocolate Cake')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                  <div class="col-sm-6 col-lg-4 product"
+                    data-category="dessert"
+                    data-name="Chocolate Cake">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/c3.jpg"
+                            class="card-img-top product-img"
+                            alt="Chocolate cake">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                 donuts
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Soft and fluffy donuts topped with
+                                 delicious glaze for the perfect sweet bite.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $20.00 for a dozen
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Chocolate Cake')">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                  </div>
+
+                   <div class="col-sm-6 col-lg-4 product"
+                    data-category="dessert"
+                    data-name="Chocolate Cake">
+
+                    <div class="card h-100 shadow-sm"
+                     data-aos="fade-up">
+
+                        <img src="img/c4.jpg"
+                            class="card-img-top product-img"
+                            alt="Chocolate cake">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                 ice cream
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Smooth and creamy ice cream available in delicious
+                                 flavors to satisfy your sweet cravings.
+                            </p>
+
+                            <h5 class="fw-bold">
+                                $3.00 for a ball
+                            </h5>
+
+                            <button class="btn btn-dark"
+                                onclick="orderProduct('Chocolate Cake')">
+                                Order Now
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+     <section id="about" class="py-5">
+
+        <div class="container">
+
+            <div class="text-center">
+
+                <h2 class="fw-bold">
+                    About Us
+                </h2>
+
+                <p class="text-muted mx-auto" style="max-width: 750px;">
+
+                    Brew & Bean is a modern coffee shop created for
+                    coffee lovers. Our goal is to provide high-quality
+                    coffee, delicious food and a welcoming environment
+                    where everyone can relax and enjoy their day.
+
+                </p>
+
+            </div>
+
+
+            <div class="row text-center mt-5 g-4">
+
+                <div class="col-md-4">
+
+                    <i class="bi bi-cup-hot-fill fs-1"></i>
+
+                    <h5 class="mt-3">
+                        Fresh Coffee
+                    </h5>
+
+                    <p class="text-muted">
+                        Freshly prepared coffee using quality beans.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <i class="bi bi-heart-fill fs-1"></i>
+
+                    <h5 class="mt-3">
+                        Made With Love
+                    </h5>
+
+                    <p class="text-muted">
+                        Every drink is prepared with care.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <i class="bi bi-people-fill fs-1"></i>
+
+                    <h5 class="mt-3">
+                        Friendly Atmosphere
+                    </h5>
+
+                    <p class="text-muted">
+                        A comfortable place to meet and relax.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+       <section id="contact" class="py-5 bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+                    Contact Us
+                </h2>
+
+                <p class="text-muted">
+                    Have a question? Send us a message.
+                </p>
+
+            </div>
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-7">
+
+                    <form id="contactForm">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Message
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="message"
+                                rows="5"
+                                required></textarea>
+
+                        </div>
+
+
+                        <button type="submit"
+                            class="btn btn-dark w-100">
+
+                            Send Message
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="text-white pt-5 pb-3"
+            style="background-color: #692f06;
+                    color:#daa14c !important;">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <h5>
+                        <i class="bi bi-cup-hot-fill"></i>
+                        MOONBREW
+                    </h5>
+
+                    <p class="text-light">
+                        Fresh coffee and good moments,
+                        every single day.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Quick Links
+                    </h5>
+
+                    <a href="#home"
+                        class="text-white text-decoration-none d-block">
+                        Home
+                    </a>
+
+                    <a href="#menu"
+                        class="text-white text-decoration-none d-block">
+                        Menu
+                    </a>
+
+                    <a href="#about"
+                        class="text-white text-decoration-none d-block">
+                        About
+                    </a>
+
+                    <a href="#contact"
+                        class="text-white text-decoration-none d-block">
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Follow Us
+                    </h5>
+                      
+                          <div class="d-flex gap-2 mt-3">
+                <a href="#"
+                   class="icon rounded-circle d-flex justify-content-center
+                   align-items-center text-decoration-none"
+                       style="width:40px;
+                              height: 40px;
+                              color:#f1d3b5;
+                              background-color: #daa14c;">
+                              f</a>
+                <a href="#"
+                    class="icon rounded-circle d-flex justify-content-center
+                   align-items-center text-decoration-none"
+                       style="width:40px;
+                              height: 40px;
+                              color:#f1d3b5;
+                              background-color: #daa14c;">
+                              𝕏</a>
+                <a href="#"
+                    class="icon rounded-circle d-flex justify-content-center
+                   align-items-center text-decoration-none"
+                       style="width:40px;
+                              height: 40px;
+                              color:#f1d3b5;
+                              background-color: #daa14c;"> 
+                              in</a>
+                <a href="#"
+                    class="icon rounded-circle d-flex justify-content-center
+                   align-items-center text-decoration-none"
+                       style="width:40px;
+                              height: 40px;
+                              color:#f1d3b5;
+                              background-color: #daa14c;">
+                              ◎</a>
+                          </div>
+
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+            <p class="text-center mb-0">
+                © 2026 moonbrew Coffee Shop
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+</script>
+
+<script src="bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+<script src="script.js"></script>
